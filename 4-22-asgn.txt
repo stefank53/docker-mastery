@@ -1,0 +1,8 @@
+docker container run -p 80:80 -d --name nginx-sk nginx
+docker container run -p 8080:80 -d --name apache-sk httpd
+docker container run -p 3306:3306 -d --name mysql-sk -e MYSQL_RANDOM_ROOT_PASSWORD=yes mysql
+docker container ls
+docker container logs mysql-sk
+2023-11-25 14:38:49+00:00 [Note] [Entrypoint]: GENERATED ROOT PASSWORD: bl19qX9UuGDrij99MElWaMP08IHTYSO7
+docker container stop mysql-sk apache-sk nginx-sk
+docker container rm mysql-sk apache-sk nginx-sk

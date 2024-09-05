@@ -1,0 +1,3 @@
+docker container top
+docker container inspect
+docker container stats
